@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UsersService} from '../users.service';
 
 @Component({
@@ -7,8 +7,7 @@ import {UsersService} from '../users.service';
   styleUrls: ['./inactive-user.component.css']
 })
 export class InactiveUserComponent implements OnInit {
-  @Input() users: string[];
-  @Output() userSetToActive = new EventEmitter<number>();
+  users: string[];
 
   constructor(private userService: UsersService) {
   }
