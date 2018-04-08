@@ -6,8 +6,10 @@ import {AccountComponent} from './account/account.component';
 import {NewAccountComponent} from './new-account/new-account.component';
 import {AccountsService} from './accounts.service';
 import {LoggingService} from './logging.service';
-import { ActiveUserComponent } from './active-user/active-user.component';
-import { InactiveUserComponent } from './inactive-user/inactive-user.component';
+import {ActiveUserComponent} from './active-user/active-user.component';
+import {InactiveUserComponent} from './inactive-user/inactive-user.component';
+import {UsersService} from './users.service';
+import {CounterService} from './counter.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { InactiveUserComponent } from './inactive-user/inactive-user.component';
   imports: [
     BrowserModule
   ],
-  providers: [AccountsService, LoggingService],
+  providers: [AccountsService, LoggingService, UsersService, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

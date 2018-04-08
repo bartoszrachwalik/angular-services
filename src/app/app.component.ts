@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountsService} from './accounts.service';
+import {UsersService} from './users.service';
 
 @Component({
   selector: 'app-root',
@@ -8,23 +9,15 @@ import {AccountsService} from './accounts.service';
 })
 export class AppComponent implements OnInit {
   accounts: { name: string, status: string }[] = [];
-  activeUsers = ['Max', 'Anna'];
-  inactiveUsers = ['Chris', 'Emily'];
+  activeUsers: string[] = [];
+  inactiveUsers: string[] = [];
 
-  constructor(private accountsService: AccountsService) {
+  constructor(private accountsService: AccountsService, private usersService: UsersService) {
   }
 
   ngOnInit() {
     this.accounts = this.accountsService.accounts;
-  }
-
-  onSetToInactive(id: number) {
-    this.inactiveUsers.push(this.activeUsers[id]);
-    this.activeUsers.splice(id, 1);
-  }
-
-  onSetToActive(id: number) {
-    this.activeUsers.push(this.inactiveUsers[id]);
-    this.inactiveUsers.splice(id, 1);
+    this.activeUsers = this.usersService.activeUsers;
+    this.inactiveUsers = this.usersService.inactiveUsers;
   }
 }
