@@ -1,11 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-
-import { AppComponent } from './app.component';
-import { AccountComponent } from './account/account.component';
-import { NewAccountComponent } from './new-account/new-account.component';
-
+import {AppComponent} from './app.component';
+import {AccountComponent} from './account/account.component';
+import {NewAccountComponent} from './new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -19,4 +17,5 @@ import { NewAccountComponent } from './new-account/new-account.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
